@@ -1,10 +1,11 @@
+import ScreenWrapper from "@/components/ScreenWrapper"
 import { StyleSheet, Text, View } from "react-native";
 
 const Profile = () => {
   return (
-    <View>
+    <ScreenWrapper>
       <Text>Profile</Text>
-    </View>
+    </ScreenWrapper>
   );
 };
 
