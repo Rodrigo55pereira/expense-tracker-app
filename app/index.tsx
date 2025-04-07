@@ -4,15 +4,14 @@ import { useEffect } from "react";
 import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 
 const index = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      router.push("/welcome");
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     router.push("/welcome");
+  //   }, 2000);
+  // }, []);
 
   return (
     <View style={s.container}>
-      <StatusBar barStyle="light-content" />
       <Image
         style={s.logo}
         resizeMode="contain"

@@ -12,22 +12,31 @@ import { useRef, useState } from "react";
 import Button from "@/components/Button";
 import { isLoaded } from "expo-font";
 import { router } from "expo-router";
+import { useAuth } from "@/contexts/authContext";
 
 const Register = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const nameRef = useRef("");
   const [isLoading, setIsLoading] = useState(false);
+  const { register: registerUser } = useAuth();
 
   const handleSubmit = async () => {
     if (!emailRef.current || !passwordRef.current || !nameRef.current) {
       Alert.alert("Sign up", "Prease fill all the fields");
       return;
     }
-    console.log("email: ", emailRef.current);
-    console.log("name: ", nameRef.current);
-    console.log("password: ", passwordRef.current);
-    console.log("good to go");
+    setIsLoading(true);
+    const res = await registerUser(
+      emailRef.current,
+      passwordRef.current,
+      nameRef.current
+    );
+    setIsLoading(false);
+    console.log("register user: ", res);
+    if (!res.success) {
+      Alert.alert("Sign up", res.msg);
+    }
   };
 
   return (
