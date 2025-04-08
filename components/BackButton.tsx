@@ -4,7 +4,7 @@ import Typo from "./Typo"
 import { router } from "expo-router"
 import { CaretLeft } from "phosphor-react-native"
 import { verticalScale } from "@/utils/styling"
-import { colors, radius } from "@/constants/theme"
+import { colors, radius, spacingY } from "@/constants/theme"
 
 const BackButton = ({ style, iconSize = 26 }: BackButtonProps) => {
   return (
@@ -25,6 +25,7 @@ const s = StyleSheet.create({
         borderRadius: radius._12,
         borderCurve: "continuous",
         padding: 5,
+        marginTop: spacingY._7,
     }
 });
 

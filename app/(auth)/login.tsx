@@ -107,8 +107,7 @@ const s = StyleSheet.create({
   container: {
     flex: 1,
     gap: spacingY._30,
-    paddingHorizontal: spacingX._20,
-    paddingTop: spacingY._7,
+    paddingHorizontal: spacingX._20
   },
   welcomeText: {
     fontSize: verticalScale(20),
